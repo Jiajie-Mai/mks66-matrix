@@ -27,10 +27,18 @@ def print_matrix( matrix ):
 #turn the paramter matrix into an identity matrix
 #you may assume matrix is square
 def ident( matrix ):
-
+    #variable declaration
     cols = len(matrix)
     rows = len(matrix)
+    #goes through the list, if the row number and column is the same, a one will be added
+    '''
+        0 1 2 3
 
+    0   1 0 0 0
+    1   0 1 0 0
+    2   0 0 1 0
+    3   0 0 0 1
+    '''
     for c in range( cols ):
         for r in range ( rows ):
             if c == r:
