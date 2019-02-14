@@ -14,7 +14,9 @@ import math
 def print_matrix( matrix ):
     #variable declaration
     cols = len(matrix)
-    rows = len(matrix)
+    rows = len(matrix[0])
+    print(cols)
+    print(rows)
     output = ""
     #adds all the values in each sublist into one string and then each new sublist has a new line
     for c in range( cols ):

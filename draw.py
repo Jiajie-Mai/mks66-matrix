@@ -3,15 +3,22 @@ from matrix import *
 
 
 def draw_lines( matrix, screen, color ):
-    pass
+    return 1
+    #for :
+    #draw_line() 
 
 def add_edge( matrix, x0, y0, z0, x1, y1, z1 ):
-    pass
+    matrix[len(matrix)][0] = x0
+    matrix[len(matrix)][1] = y0
+    matrix[len(matrix)][2] = z0
+    matrix[len(matrix)][3] = 1
+    
 
 def add_point( matrix, x, y, z=0 ):
-    pass
-
-
+    matrix[len(matrix)][0] = x
+    matrix[len(matrix)][1] = y
+    matrix[len(matrix)][2] = z
+    matrix[len(matrix)][3] = 1
 
 
 def draw_line( x0, y0, x1, y1, screen, color ):
