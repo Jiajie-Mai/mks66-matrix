@@ -1,24 +1,31 @@
 from display import *
 from matrix import *
 
+#how many things are filled
+filled = 0
 
 def draw_lines( matrix, screen, color ):
-    return 1
-    #for :
-    #draw_line() 
+    fill = 0
+    while matrix[3][fill + 1] != 0:
+        draw_line( matrix[0][fill], matrix[1][fill], matrix[0][fill + 1],  matrix[1][fill + 1] )
+        print("Line from " + str(matrix[0][fill]) + str(matrix[1][fill]) + " to " +
+        fill += 2
 
 def add_edge( matrix, x0, y0, z0, x1, y1, z1 ):
-    matrix[len(matrix)][0] = x0
-    matrix[len(matrix)][1] = y0
-    matrix[len(matrix)][2] = z0
-    matrix[len(matrix)][3] = 1
+    add_point( matrix, x0, y0, z0)
+    add_point( matrix, x1, y1, z1)
+    
     
 
 def add_point( matrix, x, y, z=0 ):
-    matrix[len(matrix)][0] = x
-    matrix[len(matrix)][1] = y
-    matrix[len(matrix)][2] = z
-    matrix[len(matrix)][3] = 1
+    fill = 0
+    while matrix[3][fill] != 0:
+        fill += 1
+    matrix[0][fill] = x
+    matrix[1][fill] = y
+    matrix[2][fill] = z
+    matrix[3][fill] = 1
+    print( "\nAdded Point to the matrix in column " + str( fill ) + ":\n" + str( x ) + "\n" + str( y ) +  "\n" + str( z ) + "\n1\n" )
 
 
 def draw_line( x0, y0, x1, y1, screen, color ):
