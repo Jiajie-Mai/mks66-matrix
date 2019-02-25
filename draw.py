@@ -6,8 +6,8 @@ filled = 0
 
 def draw_lines( matrix, screen, color ):
     i = 0
-    while i < len(matrix[0]) - 1:
-        draw_line( matrix[i][0], matrix[i][1], matrix[i + 1][0],  matrix[i + 1][0], screen, color )
+    while i < len(matrix) - 1:
+        draw_line( matrix[i][0], matrix[i][1], matrix[i + 1][0],  matrix[i + 1][1], screen, color )
         print("Line from " + str(matrix[i][0]) + " " + str(matrix[i][1]) + " to " + str(matrix[i + 1][0]) + " " + str(matrix[i + 1][1]))
         i += 2
               

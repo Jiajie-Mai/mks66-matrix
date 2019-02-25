@@ -42,14 +42,15 @@ print( "Multiply second matrix (identity) with previous matrix" )
 matrix_mult( matrix2, matrix3)
 print_matrix( matrix )
 
-i = 0
-while i < 250:
-    add_edge( matrixd, 0, 0 + i, 0, 250, 0 + i, 0 )
-    add_edge( matrixd, 0, 0 + i, 0, 125, 125 + i, 0 )
-    add_edge( matrixd, 125, 125 + i, 0, 250, 0 + i, 0 )
-    i += 10
+i = -250
+while i < 500:
+    add_edge( matrixd, 0, 0 + i, 0, 250, 250 + i, 0 )
+    add_edge( matrixd, 0, 0 + i, 0, 500, 0 + i, 0 )
+    add_edge( matrixd, 250, 250 + i, 0, 500, 0 + i, 0 )
+    draw_lines( matrixd, screen, color )
+    print(color[2])
+    i += 50
 
 print_matrix( matrixd )
 
-draw_lines( matrixd, screen, color )
 display(screen)
