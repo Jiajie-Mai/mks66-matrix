@@ -5,27 +5,30 @@ from matrix import *
 filled = 0
 
 def draw_lines( matrix, screen, color ):
-    fill = 0
-    while matrix[3][fill + 1] != 0:
-        draw_line( matrix[0][fill], matrix[1][fill], matrix[0][fill + 1],  matrix[1][fill + 1] )
-        print("Line from " + str(matrix[0][fill]) + str(matrix[1][fill]) + " to " +
-        fill += 2
+    i = 0
+    while i < len(matrix[0]) - 1:
+        draw_line( matrix[i][0], matrix[i][1], matrix[i + 1][0],  matrix[i + 1][0], screen, color )
+        print("Line from " + str(matrix[i][0]) + " " + str(matrix[i][1]) + " to " + str(matrix[i + 1][0]) + " " + str(matrix[i + 1][1]))
+        i += 2
+              
 
 def add_edge( matrix, x0, y0, z0, x1, y1, z1 ):
-    add_point( matrix, x0, y0, z0)
-    add_point( matrix, x1, y1, z1)
-    
-    
-
+    add_point( matrix, x0, y0, z0 )
+    add_point( matrix, x1, y1, z1 )
+              
 def add_point( matrix, x, y, z=0 ):
-    fill = 0
-    while matrix[3][fill] != 0:
-        fill += 1
-    matrix[0][fill] = x
-    matrix[1][fill] = y
-    matrix[2][fill] = z
-    matrix[3][fill] = 1
-    print( "\nAdded Point to the matrix in column " + str( fill ) + ":\n" + str( x ) + "\n" + str( y ) +  "\n" + str( z ) + "\n1\n" )
+    i = 0
+    while i < len(matrix):
+        if (matrix[i][3] == 0):
+            matrix[i][0] = x
+            matrix[i][1] = y
+            matrix[i][2] = z
+            matrix[i][3] = 1
+            print( "\nAdded Point to the matrix:\n" + str( x ) + "\n" + str( y ) +  "\n" + str( z ) + "\n1\n" )
+            return 1
+        i += 1
+    matrix.append([x, y, z, 1])
+    print( "\nAdded Point to the matrix:\n" + str( x ) + "\n" + str( y ) +  "\n" + str( z ) + "\n1\n" )
 
 
 def draw_line( x0, y0, x1, y1, screen, color ):
