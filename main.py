@@ -48,7 +48,6 @@ while i < 500:
     add_edge( matrixd, 0, 0 + i, 0, 500, 0 + i, 0 )
     add_edge( matrixd, 250, 250 + i, 0, 500, 0 + i, 0 )
     draw_lines( matrixd, screen, color )
-    print(color[2])
     i += 50
 
 print_matrix( matrixd )
